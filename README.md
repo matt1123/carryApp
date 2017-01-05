@@ -1,4 +1,4 @@
-Ionic App Base
+Mobile and Web Application used to determine where it is accpetable to carry a gun in public.
 =====================
 
 A starting project for Ionic that optionally supports using custom SCSS.
