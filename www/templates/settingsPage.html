@@ -1,9 +1,16 @@
 <ion-view title="Settings Page" id="page4" class=" ">
     <ion-content padding="true" class="has-header">
+    	<p>Radius: {{radiusVal.radius}}</p>
         <form id="settingsPage-form1" class="list ">
-            <ion-item class="range range-positive " id="settingsPage-range1">Miles
-                <input type="range" value="50" min="0" max="100" name="Distance">
+
+
+
+            <ion-item class="range range-positive " id="settingsPage-range1">
+            	100
+                <input type="range" ng-model="radiusVal.radius" ng-change="changeRadius();" value="1000" min="100" max="2000" name="Distance">
+                2000
             </ion-item>
         </form>
+
     </ion-content>
 </ion-view>

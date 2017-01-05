@@ -1,4 +1,4 @@
-<ion-view title="List Page" id="page2" class=" ">
+<ion-view title="List" id="page2" class=" ">
     <ion-content padding="true" class="has-header">
 
     	<ion-refresher
@@ -6,33 +6,24 @@
 		    on-refresh="doRefresh()">
   		</ion-refresher>
 
-        <ion-list id="listPage-list1" class=" ">
-            <ion-item class="item-icon-left  " id="listPage-list-item4" ui-sref="tabsController.detailsPage">
-                <i class="icon ion-thumbsup"></i>Item</ion-item>
-            <ion-item class="item-icon-left  " id="listPage-list-item5" ui-sref="tabsController.detailsPage">
-                <i class="icon ion-thumbsdown"></i>Item</ion-item>
-        </ion-list>
+        <img id="cccImg" src="img/ccc.png" alt="HeaderImage">
+        <input id="filterBox" type="text" name="filterBox" ng-keyup="filterList();" placeholder="Filter by Name"/>
 
-        <ion-list ng-repeat="loc in locations">
-
-        	<ion-item ng-show="loc.yayNay == 'yay'">
-        		<b>Name:</b>{{loc.name}}; <b>Lat:</b> {{loc.latLng}}; <b>Lon:</b> {{loc.longitude}}
+<!--         <ion-list ng-repeat="loc in rootLoc">
+        	<ion-item class="mainListItem" ng-click="sendData(loc)" href="#/page1/details">
+        		<b>{{loc.name}}</b>: ({{loc.latitude}}, {{loc.longitude}})
         	</ion-item>
-
-        	<ion-item ng-show="loc.yayNay == 'nay'">
-        		<b>Name:</b>{{loc.name}}; <b>Lat:</b> {{loc.latLng}}; <b>Lon:</b> {{loc.longitude}}
-        	</ion-item>
-
     	</ion-list>
+ -->
+        <ul ng-repeat="loc in rootLoc" class="mainList">
+            <a class="listAnchor" href="#/page1/details" ng-show="showFilter(loc.name);">
+            <li ng-click="sendData(loc)">
+                <b>{{loc.name}}</b> <br>({{loc.latitude}}, {{loc.longitude}})
+            </li>
+            </a>
+        </ul>
 
-    	<input ng-model="entry.name"/>
-		<input ng-model="entry.latitude"/>
-		<input ng-model="entry.longitude"/>
-		<input ng-model="entry.yayNay"/>
-
-
-		<button ng-click="writeData()">Write Data</button>
-		<p>Entry Number: {{entryNum}}</p>
+    
 
 
     </ion-content>

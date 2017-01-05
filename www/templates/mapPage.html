@@ -1,6 +1,15 @@
-<ion-view title="Map Page" id="page3" class=" ">
+<ion-view title="Map" id="page3" class=" " ng-init="initMap();">
     <ion-content padding="true" class="has-header">
     	<div id="map"></div>
+    	<form id="settingsPage-form1" class="list ">
+            <ion-item class="range range-positive " id="settingsPage-range1">
+            	100
+                <input type="range" ng-model="radiusVal.radius" ng-change="initMap();" value="1000" min="100" max="1500" name="Distance" step="100" snaps="true">
+                1500
+                <img id="mapRF" ng-click="initMap();" src="img/refresh.svg">
+            </ion-item>
+
+        </form>
 
 	</ion-content>
 </ion-view>

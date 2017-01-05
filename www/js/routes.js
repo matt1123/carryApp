@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.listPage', {
+  .state('tabsController.listPage', {
     url: '/list',
     views: {
       'tab1': {
@@ -43,7 +43,7 @@ angular.module('app.routes', [])
   .state('tabsController', {
     url: '/page1',
     templateUrl: 'templates/tabsController.html',
-    abstract:true
+    abstract:true,
   })
 
   .state('tabsController.detailsPage', {

@@ -1,3 +1,28 @@
-<ion-view title="Details Page" id="page5" class=" ">
-    <ion-content padding="true" class="has-header"></ion-content>
+<ion-view title="{{data.name}}" id="page5" class=" " ng-init="initDetMap();">
+    <ion-content padding="true" class="has-header">
+
+    	<table id="mapTable">
+    		<tr><td><div id="detMap"></div></td></tr>
+    		<tr><td><div id="pano"></div></td></tr>
+    	</table>
+
+    	<div id="directions" ng-click="getDirections();">
+<!--     		<img src="img/direction.svg">
+ -->    		Directions
+    	</div>
+
+    	<h1 id="detName">{{data.name}}</h1>
+    	<h3 id="detAddr">{{placeInfo.formatted_address}}</h3>
+    	<table id="detTable">
+    		<tr>
+    			<th>Latitude</th>
+    			<td>{{data.latitude}}</td>
+    		</tr>
+    		<tr>
+    			<th>Longitude</th>
+    			<td>{{data.longitude}}</td>
+    		</tr>
+    	</table>
+        <div id="paddingDiv"></div>
+	</ion-content>
 </ion-view>

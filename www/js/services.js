@@ -4,7 +4,11 @@ angular.module('app.services', [])
 
 }])
 
-.service('BlankService', [function(){
+.service('dataService', [function(){
 
+	this.entryNum;
+	this.details;
+	this.radius=1000;
+	
 }]);
 
